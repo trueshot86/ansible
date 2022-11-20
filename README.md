@@ -28,6 +28,7 @@ $ ansible-playbook hoge.yml --ask-pass
 
 
 警告メッセージ回避
+
 /etc/ansible/ansible.cfg
 ```
 [ssh_connection]
