@@ -69,6 +69,7 @@
                   }
               }
               server {
+                  client_max_body_size 512M;
                   listen 443 ssl;
                   server_name {{domain}};
                   ssl_certificate /etc/letsencrypt/live/{{domain}}/fullchain.pem;
@@ -87,6 +88,8 @@
                   }
               }
               server {
+                  client_max_body_size 512M;
+                  listen 443 ssl;
                   listen 10090 ssl;
                   server_name {{domain}};
                   ssl_certificate /etc/letsencrypt/live/{{domain}}/fullchain.pem;
