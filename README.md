@@ -2,8 +2,9 @@
 
 ### e.g.
 
+/etc/ansible/hosts
 
-```/etc/zabbix/hosts
+```
 all:
   vars:
     ansible_python_interpreter: /usr/bin/python3
