@@ -23,7 +23,7 @@ openresty:
 
 実行
 ```
-$ ansible-playbook hoge.yml --ask-pass
+$ ansible-playbook hoge.yml --ask-pass -e "domain=fuga.com"
 ```
 
 
