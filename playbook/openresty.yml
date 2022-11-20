@@ -1,0 +1,24 @@
+- hosts: openresty
+  vars:
+    ansible_ssh_user: root
+  tasks:
+    - name: Install gnupg
+      apt: name=gnupg update_cache=yes cache_valid_time=3600
+
+    - name: Add key
+      apt_key: url=https://openresty.org/package/pubkey.gpg
+
+    - name: Install repository command
+      apt: name=software-properties-common update_cache=yes cache_valid_time=3600
+
+    - name: Install repository
+      apt_repository:
+        repo: deb http://openresty.org/package/ubuntu bionic main
+        state: present
+        filename: openresty
+
+    - name: Install openresty
+      apt: name=openresty update_cache=yes cache_valid_time=3600
+
+    - name: Enable openresty
+      systemd: name=openresty.service enabled=yes
